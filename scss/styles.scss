@@ -1,0 +1,159 @@
+// Grand Central Station
+
+
+@import 'google-homepage'; 
+
+
+$bg-default : white;
+
+
+body {background:#3D7DEC;}
+
+
+img#title
+
+
+
+img#random
+
+{width: 600px;
+height: 300px;
+    z-index: -1;}
+
+
+// Keyframe Animation
+@keyframes fadeInLeft {
+  0% { 
+    opacity: 0;
+    transform: scale(.5);
+  }
+  
+  50% { 
+    opacity: .5;
+    transform: scale(2);
+  }
+  
+  100% { 
+    opacity: 1;
+    transform: scale(1);
+  }
+
+}
+
+//first frame
+
+/* Doodle Stage */
+#stage {
+ background: #3D7DEC;
+  height: 300px;
+  width: 600px;
+overflow: hidden;
+ animation: fadeInLeft 1s 2s 3 forwards;
+
+
+   
+  // Hide Overflowing Elements
+  overflow: hidden;
+  
+  // Relative Parent
+  position: relative;
+}
+
+// Absolute Children
+#sugar,
+#square,
+#mnm {
+  position: absolute;
+}
+
+#sugar {
+  left: 500px;
+  top: 150px;
+    width: 100px;
+    z-index:200;
+   
+}
+
+#chocolate {
+  left: 500px;
+  top: 150px;
+  width: 100px;
+    z-index:200;
+  
+}
+
+#mnm {
+    left: 500px;
+    top:150px;
+    width: 100px;
+    z-index: 200;
+
+}
+
+// Override Defaults
+h1 {
+  margin: 0;
+}
+
+
+
+
+
+#stage:hover #chocolate {
+  background: red;
+  fill: $bg-default;
+  // Transform half size  
+  transform: scale(.5);
+}
+
+#stage:hover #sugar {
+  background: green;
+  fill: $bg-default;
+  // Transform move down
+  transform: translateY(-100px);
+}
+
+#stage:hover #mnm {
+  background: blue;
+  fill: $bg-default;
+  // Transform move down
+  transform: translate(40px, 40px) rotate(15deg);
+}
+
+
+//fade in animations
+
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+}
+
+@-webkit-keyframes fadeInLeftBig {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-2000px, 0, 0);
+    transform: translate3d(-2000px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
